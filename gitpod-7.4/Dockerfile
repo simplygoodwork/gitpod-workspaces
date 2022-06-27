@@ -26,6 +26,7 @@ RUN  install-packages \
         php-tokenizer \
         php-xml \
         php-zip \
+        rsync \
     && curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php \
     && php /tmp/composer-setup.php  --version=2.2.5 --install-dir=/tmp \
     && sudo mv /tmp/composer.phar /usr/bin/composer \
@@ -50,7 +51,9 @@ RUN echo "/etc/mysql/mysql-bashrc-launch.sh" >> /home/gitpod/.bashrc.d/100-mysql
 
 # 3. Install Yarn https://github.com/gitpod-io/workspace-images/tree/main/chunks/lang-node
 
-ENV NODE_VERSION=16.13.2
+ARG NODE_VERSION=16.13.2
+
+ENV NODE_VERSION=${NODE_VERSION}
 
 RUN curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | PROFILE=/dev/null bash \
     && bash -c ". .nvm/nvm.sh \

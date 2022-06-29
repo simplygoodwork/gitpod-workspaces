@@ -1,0 +1,2 @@
+alias db-backup='mysqldump -u root craft | zip > $GITPOD_REPO_ROOTS/.gitpod/seed.sql.zip'
+alias db-restore='unzip -p $GITPOD_REPO_ROOTS/.gitpod/seed.sql.zip | mysql -u root craft'

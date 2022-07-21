@@ -4,7 +4,7 @@ FROM simplygoodwork/gitpod-base:latest
 USER root
 
 # Dazzle does not rebuild a layer until one of its lines are changed. Increase this counter to rebuild this layer.
-ENV TRIGGER_REBUILD=3
+ENV TRIGGER_REBUILD=4
 
 # 1. Add in PHP 8.0
 RUN add-apt-repository -y ppa:ondrej/php \
@@ -19,6 +19,7 @@ RUN add-apt-repository -y ppa:ondrej/php \
         php8.0-mbstring \
         php8.0-mysql \
         php8.0-pgsql \
+        php8.0-soap \
         php8.0-sqlite3 \
         php8.0-tokenizer \
         php8.0-xml \

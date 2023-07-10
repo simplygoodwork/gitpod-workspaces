@@ -15,6 +15,7 @@ RUN add-apt-repository -y ppa:ondrej/php \
         php8.0-ctype \
         php8.0-curl \
         php8.0-gd \
+        php8.0-imagick \
         php8.0-intl \
         php8.0-mbstring \
         php8.0-mysql \
